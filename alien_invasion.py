@@ -36,17 +36,7 @@ class AlienInvasion:
             # Ship’s position will be updated after we’ve checked for keyboard 
             # events and before we update the screen.
             self.ship.update()
-            # Calling update() on a group, the group automatically calls 
-            # update() for each sprite in the group
-            self.bullets.update()
-
-            # Get rid of bullets that have disappeared.
-            # Even if you iterate over the copy, the modifications (remove) 
-            # are always applied to `self.bullets` itself (the original group).
-            for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
-                    self.bullets.remove(bullet)
-
+            self._update_bullets()
             self._update_screen()
             
     
@@ -78,8 +68,9 @@ class AlienInvasion:
 
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group."""
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -89,6 +80,20 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             # Stop moving the ship to the left.
             self.ship.moving_left = False
+
+    def _update_bullets(self):
+        """Update position of bullets and get rid of old bullets."""
+        # Update bullet positions.
+        # Calling update() on a group, the group automatically calls 
+        # update() for each sprite in the group
+        self.bullets.update()
+
+        # Get rid of bullets that have disappeared.
+        # Even if you iterate over the copy, the modifications (remove) 
+        # are always applied to `self.bullets` itself (the original group).
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
