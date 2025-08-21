@@ -39,6 +39,14 @@ class AlienInvasion:
             # Calling update() on a group, the group automatically calls 
             # update() for each sprite in the group
             self.bullets.update()
+
+            # Get rid of bullets that have disappeared.
+            # Even if you iterate over the copy, the modifications (remove) 
+            # are always applied to `self.bullets` itself (the original group).
+            for bullet in self.bullets.copy():
+                if bullet.rect.bottom <= 0:
+                    self.bullets.remove(bullet)
+
             self._update_screen()
             
     
