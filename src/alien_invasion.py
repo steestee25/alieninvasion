@@ -3,11 +3,11 @@ from time import sleep
 import pygame
 from settings import Settings
 from game_stats import GameStats
-from ship import Ship
-from bullet import Bullet
-from alien import Alien
-from button import Button
-from scoreboard import Scoreboard
+from entities.ship import Ship
+from entities.bullet import Bullet
+from entities.alien import Alien
+from ui.button import Button
+from ui.scoreboard import Scoreboard
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior."""

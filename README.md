@@ -25,6 +25,39 @@ Alien Invasion is a fully playable game developed as part of learning game devel
 * Interactive UI with Play button and instructions.
 
 ---
+## 📂 Project Structure
+
+The project is organized as follows:
+
+```
+.
+├── assets/
+│   └── images/
+│       ├── alien.bmp
+│       └── ship.bmp
+├── src/
+│   ├── entities/
+│   │   ├── alien.py
+│   │   ├── bullet.py
+│   │   └── ship.py
+│   ├── ui/
+│   ├── alien\_invasion.py
+│   ├── game\_stats.py
+│   └── settings.py
+├── .gitignore
+└── README.md
+
+```
+
+- **assets/images/**: contains the images used in the game.  
+- **src/entities/**: main game entities (ship, aliens, bullets).  
+- **src/ui/**: user interface logic (buttons, scoreboard).  
+- **alien_invasion.py**: main entry point to run the game.  
+- **game_stats.py**: handles game statistics and state.  
+- **settings.py**: stores game configuration.
+```
+
+---
 
 ## 🛠 **Technologies & Libraries Used**
 
