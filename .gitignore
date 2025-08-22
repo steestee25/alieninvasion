@@ -1,0 +1,17 @@
+# Escludi cartelle __pycache__
+__pycache__/
+*/__pycache__/
+
+# Escludi file compilati Python
+*.pyc
+*.pyo
+*.pyd
+
+# Escludi file temporanei di editor/IDE
+*.swp
+*.swo
+.DS_Store
+
+# Escludi file di configurazione IDE comuni
+.vscode/
+.idea/
