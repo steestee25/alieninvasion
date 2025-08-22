@@ -8,9 +8,9 @@ A **2D arcade-style shooter game** built with **Python** and **Pygame**, inspire
 
 Want to see Alien Invasion in action? Here's a quick look at the gameplay:
 
+https://github.com/user-attachments/assets/209e6696-73f4-45e6-be73-1517e3097cef
 
 *The GIF above shows a sample playthrough, including shooting aliens, scoring, and level progression.*
-
 
 ---
 
@@ -96,4 +96,3 @@ Alien Invasion is a fully playable game developed as part of learning game devel
    python alien_invasion.py
    ```
 
----
